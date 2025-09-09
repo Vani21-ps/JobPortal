@@ -27,7 +27,7 @@ public class Main {
         JobService jobService = new JobService(jobDao);
         ApplicationService appService = new ApplicationService(appDao);
 
-        System.out.println("=== Job Portal (ORM CLI) ===");
+        System.out.println("=== Job Portal ===");
         loop:
         while (true) {
             System.out.println("\n1) Register  2) Login  3) List Jobs  4) List Users (admin) 0) Exit");
