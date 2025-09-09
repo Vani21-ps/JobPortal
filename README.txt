@@ -4,6 +4,13 @@
 It demonstrates a clean **DAO-Service architecture** using **Hibernate ORM** and **MySQL**, with support for multiple roles: Candidate, Employer, and Admin.
 
 ---
+# Job Portal (ORM CLI)
+
+**Job Portal (ORM CLI)** is a Java-based CLI app for managing jobs, users, and applications.
+
+## Features
+- **User Management:** Register/Login
+- **Job Management:** Post/View Jobs
 
 ## Features
 
