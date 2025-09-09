@@ -1,6 +1,6 @@
-Job Portal (ORM CLI)
+Job Portal 
 
-Job Portal (ORM CLI) is a Java-based command-line application for managing job listings, user accounts, and job applications. Built using Hibernate ORM and MySQL, this project demonstrates a clean DAO-Service architecture with multi-role support: Candidate, Employer, and Admin.
+Job Portal is a Java-based command-line application for managing job listings, user accounts, and job applications. Built using Hibernate ORM and MySQL, this project demonstrates a clean DAO-Service architecture with multi-role support: Candidate, Employer, and Admin.
 
 Features
 
