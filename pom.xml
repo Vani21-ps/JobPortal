@@ -40,7 +40,14 @@
       <artifactId>slf4j-simple</artifactId>
       <version>2.0.7</version>
     </dependency>
-  </dependencies>
+
+    <dependency>
+        <groupId>org.springframework</groupId>
+        <artifactId>spring-context</artifactId>
+        <version>5.3.30</version>
+    </dependency>
+    <!-- ...other dependencies... -->
+</dependencies>
 
   <build>
     <plugins>

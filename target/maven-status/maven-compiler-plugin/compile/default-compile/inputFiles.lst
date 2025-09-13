@@ -1,4 +1,5 @@
 /Users/vanijain/Desktop/job-portal-orm-cli/src/main/java/com/jobportal/cli/Main.java
+/Users/vanijain/Desktop/job-portal-orm-cli/src/main/java/com/jobportal/cli/config/AppConfig.java
 /Users/vanijain/Desktop/job-portal-orm-cli/src/main/java/com/jobportal/cli/dao/ApplicationDao.java
 /Users/vanijain/Desktop/job-portal-orm-cli/src/main/java/com/jobportal/cli/dao/JobDao.java
 /Users/vanijain/Desktop/job-portal-orm-cli/src/main/java/com/jobportal/cli/dao/UserDao.java

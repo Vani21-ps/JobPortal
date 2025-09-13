@@ -14,4 +14,5 @@ com/jobportal/cli/service/JobService.class
 com/jobportal/cli/service/AuthService.class
 com/jobportal/cli/dao/impl/JobDaoImpl.class
 com/jobportal/cli/dao/JobDao.class
+com/jobportal/cli/config/AppConfig.class
 com/jobportal/cli/dao/impl/UserDaoImpl.class

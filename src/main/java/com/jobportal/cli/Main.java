@@ -3,9 +3,6 @@ package com.jobportal.cli;
 import com.jobportal.cli.dao.UserDao;
 import com.jobportal.cli.dao.JobDao;
 import com.jobportal.cli.dao.ApplicationDao;
-import com.jobportal.cli.dao.impl.UserDaoImpl;
-import com.jobportal.cli.dao.impl.JobDaoImpl;
-import com.jobportal.cli.dao.impl.ApplicationDaoImpl;
 import com.jobportal.cli.model.*;
 import com.jobportal.cli.service.*;
 import java.util.List;
@@ -13,19 +10,28 @@ import java.util.Optional;
 import java.util.Scanner;
 import java.util.logging.LogManager;
 
+// Add Spring imports
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+import com.jobportal.cli.config.AppConfig;
+
 public class Main {
     private static final Scanner in = new Scanner(System.in);
 
     public static void main(String[] args) {
         LogManager.getLogManager().reset();
-        UserDao userDao = new UserDaoImpl();
-        JobDao jobDao = new JobDaoImpl();
-        ApplicationDao appDao = new ApplicationDaoImpl();
 
-        AuthService auth = new AuthService(userDao);
-        UserService userService = new UserService(userDao);
-        JobService jobService = new JobService(jobDao);
-        ApplicationService appService = new ApplicationService(appDao);
+        // Use Spring ApplicationContext to get beans
+        ApplicationContext ctx = new AnnotationConfigApplicationContext(AppConfig.class);
+
+        UserDao userDao = ctx.getBean(UserDao.class);
+        JobDao jobDao = ctx.getBean(JobDao.class);
+        ApplicationDao appDao = ctx.getBean(ApplicationDao.class);
+
+        AuthService auth = ctx.getBean(AuthService.class);
+        UserService userService = ctx.getBean(UserService.class);
+        JobService jobService = ctx.getBean(JobService.class);
+        ApplicationService appService = ctx.getBean(ApplicationService.class);
 
         System.out.println("=== Job Portal ===");
         loop:
