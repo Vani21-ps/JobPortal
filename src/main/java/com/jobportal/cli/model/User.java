@@ -15,6 +15,10 @@ public class User {
     private Role role;
     @Column(name="created_at") private LocalDateTime createdAt;
 
+    // Added for resume support
+    @Column(name="resume_path")
+    private String resumePath;
+
     public User() {}
     public User(String name, String email, String passwordHash, Role role) {
         this.name = name; this.email = email; this.passwordHash = passwordHash; this.role = role;
@@ -32,5 +36,12 @@ public class User {
     public void setRole(Role role){ this.role = role; }
     public LocalDateTime getCreatedAt(){ return createdAt; }
     public void setCreatedAt(LocalDateTime createdAt){ this.createdAt = createdAt; }
-    @Override public String toString(){ return "User{"+id+", '"+name+"', '"+email+"', role="+role+"}"; }
+    public String getResumePath() { return resumePath; }
+    public void setResumePath(String resumePath) { this.resumePath = resumePath; }
+
+    @Override
+    public String toString(){
+        return "User{" + id + ", '" + name + "', '" + email + "', role=" + role +
+               (resumePath != null ? ", resume='" + resumePath + "'" : "") + "}";
+    }
 }
