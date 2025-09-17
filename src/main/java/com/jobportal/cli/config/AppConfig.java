@@ -13,17 +13,12 @@ import jakarta.persistence.EntityManager;
 
 @Configuration
 public class AppConfig {
-
-    /**
-     * Provides a managed EntityManager.
-     * Spring will call em.close() on shutdown.
-     */
     @Bean(destroyMethod = "close")
     public EntityManager entityManager() {
         return JpaUtil.em();
     }
 
-    // ---------- DAO Beans ----------
+   
     @Bean 
     public UserDao userDao(EntityManager em) { 
         return new UserDaoImpl(em); 
@@ -39,7 +34,6 @@ public class AppConfig {
         return new ApplicationDaoImpl(em); 
     }
 
-    // ---------- Service Beans ----------
     @Bean 
     public AuthService authService(UserDao userDao) { 
         return new AuthService(userDao); 

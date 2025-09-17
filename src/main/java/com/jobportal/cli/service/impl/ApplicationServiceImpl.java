@@ -16,7 +16,7 @@ public class ApplicationServiceImpl implements ApplicationService {
 
     @Override
     public Application apply(Application app) {
-        // Prevent duplicate applications
+       
         Optional<Application> existing = applicationDao.findByJobIdAndCandidateId(app.getJobId(), app.getCandidateId());
         if (existing.isPresent()) {
             throw new RuntimeException("You have already applied for this job.");

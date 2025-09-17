@@ -9,8 +9,6 @@ public interface ApplicationService {
     Optional<Application> byId(int id);
     List<Application> byCandidate(int candidateId);
     List<Application> byJob(int jobId);
-
-    // New methods for features
     List<Application> getApplicationsByCandidate(int candidateId);
     List<Application> getApplicationsByJob(int jobId);
     void updateApplicationStatus(int applicationId, String status);

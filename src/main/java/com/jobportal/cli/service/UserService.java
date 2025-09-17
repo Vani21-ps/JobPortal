@@ -11,7 +11,7 @@ public interface UserService {
     void deleteUser(int userId);
     int countUsers();
 
-    // New method
+
     Optional<User> getCandidateProfile(int id);
 }
 

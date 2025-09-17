@@ -10,7 +10,6 @@ public interface JobDao {
     List<Job> findAll();
     List<Job> byEmployer(int employerId);
 
-    // New methods for features
     List<Job> search(String title, String location);
     void updateJob(int jobId, String title, String location, String description);
     void deleteJob(int jobId);

@@ -82,7 +82,7 @@ public class Main {
         return u;
     }
 
-    // ------------------ Candidate Menu ------------------
+
     private static void candidateMenu(User u, JobService jobService, ApplicationService appService, UserService userService) {
         while (true) {
             System.out.println("\n[CANDIDATE] 1) List Jobs 2) Apply Job 3) My Applications 4) Update Profile 0) Logout");
@@ -94,7 +94,7 @@ public class Main {
                     System.out.print("Job ID to apply: "); 
                     int jid = parseInt();
 
-                    // Check if already applied
+                   
                     Optional<Application> existing = appService.getApplicationsByCandidate(u.getId())
                         .stream()
                         .filter(ap -> ap.getJobId() == jid)
@@ -128,7 +128,7 @@ public class Main {
         }
     }
 
-    // ------------------ Employer Menu ------------------
+
     private static void employerMenu(User u, JobService jobService, ApplicationService appService, UserService userService) {
         while (true) {
             System.out.println("\n[EMPLOYER] 1) Post Job 2) Edit Job 3) Delete Job 0) Logout");
@@ -167,7 +167,6 @@ public class Main {
         }
     }
 
-    // ------------------ Admin Menu ------------------
     private static void adminMenu(User u, UserService userService, JobService jobService, ApplicationService appService, AdminService adminService) {
         while (true) {
             System.out.println("\n[ADMIN] 1) List Users 2) List Jobs 3) Delete User 4) Delete Job 5) View Stats 0) Logout");
@@ -181,7 +180,7 @@ public class Main {
                         "ID: " + u1.getId() + ", Name: " + u1.getName() + ", Email: " + u1.getEmail() + ", Role: " + u1.getRole()
                     ));
                 }
-                case 2 -> { // List Jobs
+                case 2 -> { 
                     List<Job> jobs = jobService.getAllJobs();
                     if (jobs.isEmpty()) System.out.println("No jobs found.");
                     else jobs.forEach(j -> System.out.println(
@@ -209,7 +208,7 @@ public class Main {
         }
     }
 
-    // ------------------ Utility ------------------
+ 
     private static void listJobs(JobService jobService) {
         List<Job> list = jobService.listAll();
         if (list.isEmpty()) System.out.println("No jobs available.");

@@ -15,7 +15,7 @@ public class User {
     private Role role;
     @Column(name="created_at") private LocalDateTime createdAt;
 
-    // Added for resume support
+
     @Column(name="resume_path")
     private String resumePath;
 
@@ -23,7 +23,7 @@ public class User {
     public User(String name, String email, String passwordHash, Role role) {
         this.name = name; this.email = email; this.passwordHash = passwordHash; this.role = role;
     }
-    // getters & setters
+   
     public int getId(){ return id; }
     public void setId(int id){ this.id = id; }
     public String getName(){ return name; }

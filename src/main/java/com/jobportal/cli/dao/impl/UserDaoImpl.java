@@ -13,12 +13,10 @@ public class UserDaoImpl implements UserDao {
 
     private final EntityManager em;
 
-    // ✅ Constructor for AppConfig injection
     public UserDaoImpl(EntityManager em) {
         this.em = em;
     }
 
-    // ✅ Default no-arg constructor (safe for frameworks)
     public UserDaoImpl() {
         this.em = null;
     }

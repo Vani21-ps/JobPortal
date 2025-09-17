@@ -81,7 +81,6 @@ public class ApplicationDaoImpl implements ApplicationDao {
         return count.intValue();
     }
 
-    // ✅ New method for duplicate check
     @Override
     public Optional<Application> findByJobIdAndCandidateId(int jobId, int candidateId) {
         TypedQuery<Application> query = em.createQuery(

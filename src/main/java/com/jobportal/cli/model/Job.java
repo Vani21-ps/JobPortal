@@ -14,12 +14,10 @@ public class Job {
     private String description;
     private String location;
 
-    // ✅ Link job → employer (User) with a foreign key
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "employer_id", nullable = false)
     private User employer;
 
-    // --------- Getters & Setters ---------
     public int getId() { return id; }
     public void setId(int id) { this.id = id; }
 
@@ -35,7 +33,7 @@ public class Job {
     public User getEmployer() { return employer; }
     public void setEmployer(User employer) { this.employer = employer; }
 
-    // ✅ Proper toString for readable output
+   
     @Override
     public String toString() {
         return "Job ID: " + id +

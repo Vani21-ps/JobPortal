@@ -13,12 +13,12 @@ public class JobDaoImpl implements JobDao {
 
     private final EntityManager em;
 
-    // ✅ Constructor for AppConfig injection
+    
     public JobDaoImpl(EntityManager em) {
         this.em = em;
     }
 
-    // ✅ Default no-arg constructor (safe for frameworks)
+   
     public JobDaoImpl() {
         this.em = null;
     }
